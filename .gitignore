@@ -1,0 +1,28 @@
+# editor
+*~
+._*
+.DS_Store
+.#*
+*flymake.html
+
+# code
+*.pyc
+pip-log.txt
+*.o
+*.a
+*.so
+*.swp
+*.*.sw[onp]
+
+# xcode
+xcuserdata
+.fseventsd/
+
+# python coverage
+.coverage
+
+# Eclipse 
+search_api/bin
+.metadata
+
+*json.cache

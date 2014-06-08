@@ -1,0 +1,15 @@
+#!/bin/env python
+
+
+import optparse
+
+from lib import load_recipes_from_file
+
+
+def main():
+    load_recipes_from_file.recipe_files_handler()
+    
+
+
+if __name__ == "__main__":
+    main()
