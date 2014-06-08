@@ -1,0 +1,7 @@
+{
+    "recipe_name": "lvm_vg_twopv",
+    "recipe_binary": "pvs=\"\" && for pv in $(pvdisplay  | grep \"PV Name\"  | grep -v sda | grep -o \"/dev/sd[a-z]\"); do pvs=\"$pvs $pv\"; done && vgcreate otterdam_vg -f $pvs",
+    "recipe_flags": {
+    },
+    "recipe_weight": 40
+}

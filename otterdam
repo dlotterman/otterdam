@@ -1,15 +1,32 @@
 #!/bin/env python
 
-
+#need optparse for 2.6 compat
 import optparse
+import logging
+import sys
 
 from lib import load_recipes_from_file
+from lib import flatten_recipes
+from lib import build_command_lists
+from lib import command_runner
 
 
-def main():
-    load_recipes_from_file.recipe_files_handler()
-    
+def main(dry_run):
+    recipes_raw = load_recipes_from_file.recipe_files_handler()
+    flattened_recipes = flatten_recipes.flatten_recipes(recipes_raw)
+    ordered_command_lists = build_command_lists.get_ordered_command_lists(flattened_recipes)
+    command_runner.run_command_list(ordered_command_lists, dry_run)
 
 
 if __name__ == "__main__":
-    main()
+
+    parser = optparse.OptionParser()
+    parser.add_option('--log_level', action='store', default=20, type="int", help='http://bit.ly/1lDjeHv')
+    parser.add_option('--dry_run', action='store_true', default=False, help='do not execute system commands')
+    options, args = parser.parse_args()
+
+    logging.basicConfig(level=getattr(options, 'log_level'),
+                        stream=sys.stdout,
+                        format='%(asctime)s  %(levelname)-1s %(message)s',
+                        datefmt='%y-%m-%d %H:%M:%S')
+    main(options.dry_run)

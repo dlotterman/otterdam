@@ -1,0 +1,16 @@
+{
+    "recipe_name": "lvm_pv_twodisk",
+    "recipe_binary": "/sbin/pvcreate",
+    "recipe_flags": {
+        " ": [
+            "/dev/sdc",
+            " ",
+            ""
+        ],
+        "  ": [
+            "/dev/sdb"
+        ]
+    },
+    "recipe_weight": 15,
+    "recipe_comments": "the \" \" and \"  \" flags are a ghetto way to pass blank flags to pvcreate"
+}

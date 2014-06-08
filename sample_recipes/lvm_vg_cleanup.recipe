@@ -1,0 +1,7 @@
+{
+    "recipe_name": "lvm_vg_cleanup.",
+    "recipe_binary": "/sbin/vgremove -f -y otterdam_vg",
+    "recipe_flags": {
+    },
+    "recipe_weight": 250
+}

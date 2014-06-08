@@ -1,0 +1,7 @@
+{
+    "recipe_name": "lvm_pv_cleanup.",
+    "recipe_binary": "/sbin/pvremove -f -y /dev/sdc /dev/sdb",
+    "recipe_flags": {
+    },
+    "recipe_weight": 300
+}

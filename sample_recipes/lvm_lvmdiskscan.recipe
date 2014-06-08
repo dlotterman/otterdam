@@ -1,0 +1,7 @@
+{
+    "recipe_name": "lvm",
+    "recipe_binary": "/sbin/lvmdiskscan",
+    "recipe_flags": {
+    },
+    "recipe_weight": 10
+}
