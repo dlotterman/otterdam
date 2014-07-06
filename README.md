@@ -6,8 +6,10 @@ It loads a folder of "recipes", each of which is a step in building, executing o
 
 This means you can have:
 
-`create_disk_command --option_1 (1, 2, 3) --options_2 (a,b) --option_3 (Z)1
+`create_disk_command --option_1 (1, 2, 3) --options_2 (a,b) --option_3 (Z)`
+
 `create_network_command --option_1 (a, b)`
+
 `execute_bench_command --option_1 (z, y) --option_2 (9, 8)`
 
 And Otterdamn will discover all the combinations of these commands and execute them as ordered by the recipe.
